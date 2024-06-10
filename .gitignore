@@ -44,6 +44,7 @@ __pycache__/
 # Ignore any database files
 *.db
 *.sqlite
+*.sqlite3
 
 # Ignore pycache files
 __pycache__/
