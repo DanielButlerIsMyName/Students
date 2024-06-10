@@ -5,8 +5,8 @@ from django.core.validators import RegexValidator
 
 class Student(models.Model):
   id = models.AutoField(primary_key=True)
-  firstName = models.CharField(max_length=100, validators=[RegexValidator(r'^[a-zA-Z\' -]+$')])
-  lastName = models.CharField(max_length=100, validators=[RegexValidator(r'^[a-zA-Z\' -]+$')])
+  firstName = models.CharField(max_length=100, validators=[RegexValidator(r'^[a-zA-ZäöüÄÖÜéèêàâçÉÈÊÀÂÇ\' -]+$')])
+  lastName = models.CharField(max_length=100, validators=[RegexValidator(r'^[a-zA-ZäöüÄÖÜéèêàâçÉÈÊÀÂÇ\' -]+$')])
   email = models.EmailField(validators=[RegexValidator(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')])
   canton = models.ForeignKey('Canton', on_delete=models.CASCADE)
   company = models.ForeignKey('Company', on_delete=models.CASCADE)
