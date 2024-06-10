@@ -44,3 +44,9 @@ __pycache__/
 # Ignore any database files
 *.db
 *.sqlite
+
+# Ignore pycache files
+__pycache__/
+
+# Ignore Django migrations
+**/migrations/
