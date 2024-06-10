@@ -1,21 +1,11 @@
-"""
-URL configuration for students project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('', include('api.urls')),
+  path('students/', views.StudentListCreate.as_view(), name='student-list-create'),
+  path('students/<int:pk>/', views.StudentRetrieveUpdateDestroy.as_view(), name='student-retrieve-update-destroy'),
+  path('cantons/', views.CantonListCreate.as_view(), name='canton-list-create'),
+  path('cantons/<int:pk>/', views.CantonRetrieveUpdateDestroy.as_view(), name='canton-retrieve-update-destroy'),
+  path('companies/', views.CompanyListCreate.as_view(), name='company-list-create'),
+  path('companies/<int:pk>/', views.CompanyRetrieveUpdateDestroy.as_view(), name='company-retrieve-update-destroy'),
 ]

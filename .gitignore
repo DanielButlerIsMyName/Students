@@ -40,3 +40,7 @@ __pycache__/
 *.swp
 *.swo
 .DS_Store
+
+# Ignore any database files
+*.db
+*.sqlite
